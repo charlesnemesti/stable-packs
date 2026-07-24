@@ -386,6 +386,11 @@
   border-color: color-mix(in srgb, var(--fx-accent) 28%, var(--line));
 }
 
+/* Let the CA box position against .hero-shell, even if React nests it in .hero-copy */
+.hero-shell .hero-copy {
+  position: static;
+}
+
 @media (max-width: 640px) {
   .ca-copy-box-hero {
     width: min(calc(100% - 24px), 420px);
