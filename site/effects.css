@@ -374,6 +374,14 @@
   gap: 0.75rem;
 }
 
+.ca-copy-box-hero {
+  width: min(100%, 520px);
+  margin-top: 1.35rem;
+  background: color-mix(in srgb, #050705 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-color: color-mix(in srgb, var(--fx-accent) 28%, var(--line));
+}
+
 .ca-copy-meta {
   display: flex;
   flex-wrap: wrap;
