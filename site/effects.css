@@ -375,11 +375,32 @@
 }
 
 .ca-copy-box-hero {
-  width: min(100%, 520px);
-  margin-top: 1.35rem;
+  position: absolute;
+  left: max(16px, 4vw);
+  bottom: max(16px, 3.5vh);
+  z-index: 3;
+  width: min(calc(100% - 32px), 420px);
+  margin-top: 0;
   background: color-mix(in srgb, #050705 88%, transparent);
   backdrop-filter: blur(8px);
   border-color: color-mix(in srgb, var(--fx-accent) 28%, var(--line));
+}
+
+@media (max-width: 640px) {
+  .ca-copy-box-hero {
+    width: min(calc(100% - 24px), 420px);
+    left: 12px;
+    bottom: 12px;
+  }
+
+  .ca-copy-box-hero .ca-copy-row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .ca-copy-box-hero .ca-copy-btn {
+    width: auto;
+  }
 }
 
 .ca-copy-meta {
