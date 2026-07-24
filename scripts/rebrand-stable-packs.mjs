@@ -153,8 +153,8 @@ function patchHtmlFiles() {
     html = html.replaceAll("Stable Packs | USD₮ packs on Stable", "Stable Packs | USD₮ Packs");
     html = html.replaceAll("<title>Stable Packs | USD₮ Packs</title>", "<title>Stable Packs | USD₮ Packs on Stable Chain</title>");
     // Chain badge alt / robinhood asset stays path but we overwrite file
-    html = html.replaceAll("https://x.com/stable", "https://x.com/stable");
-    html = html.replaceAll("https://x.com/packfolioapp", "https://x.com/stable");
+    html = html.replaceAll("https://x.com/StablePacks", "https://x.com/StablePacks");
+    html = html.replaceAll("https://x.com/StablePacks", "https://x.com/StablePacks");
     fs.writeFileSync(file, html);
     console.log("patched HTML", rel);
   }

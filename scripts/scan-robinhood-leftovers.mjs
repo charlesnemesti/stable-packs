@@ -25,7 +25,7 @@ for (const s of [
   "network-label-robinhood",
   "Stable Chain",
   "STABLE CHAIN",
-  "x.com/stable",
+  "x.com/StablePacks",
   "x.com/packfolio",
 ]) {
   console.log((j.split(s).length - 1) + "\t" + s);
