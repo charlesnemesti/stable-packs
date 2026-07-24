@@ -254,12 +254,16 @@
   animation-duration: 26s !important;
 }
 
-/* How it works — balanced full-width 2×2 (no empty sticky rail) */
+/* How it works — compact full-width step grid */
+.how-it-works-section {
+  max-width: 1320px !important;
+}
+
 .how-it-works-section .how-heading {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem) !important;
   text-align: center;
 }
 
@@ -268,93 +272,99 @@
   margin-right: auto;
 }
 
-.how-story {
+.how-it-works-section .how-story {
   display: block !important;
 }
 
-.how-visual-column {
+.how-it-works-section .how-visual-column {
   display: none !important;
 }
 
-.how-mobile-scene {
+.how-it-works-section .how-mobile-scene {
   display: none !important;
 }
 
-.how-narrative {
+.how-it-works-section .how-narrative {
   counter-reset: how-step;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 4vw, 3.25rem) clamp(2.25rem, 5vw, 4rem);
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.25rem 1.5rem !important;
   border-top: 1px solid var(--line);
-  padding-top: clamp(2rem, 4vw, 3.25rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem) !important;
+  width: 100% !important;
+  max-width: none !important;
 }
 
-.how-stage-copy {
+.how-it-works-section .how-stage-copy,
+.how-it-works-section .how-stage-copy:last-child {
   min-height: 0 !important;
+  height: auto !important;
   border-left: none !important;
-  padding: 0 !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 0.85rem;
-  position: relative;
+  padding: 1.25rem 1.15rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  gap: 0.7rem !important;
+  position: relative !important;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #050705;
 }
 
-.how-stage-copy:last-child {
-  min-height: 0 !important;
-}
-
-.how-stage-marker {
+.how-it-works-section .how-stage-marker {
   position: static !important;
   left: auto !important;
-  margin: 0;
+  margin: 0 !important;
 }
 
-.how-stage-copy::before {
+.how-it-works-section .how-stage-copy::before {
   counter-increment: how-step;
   content: counter(how-step, decimal-leading-zero);
-  color: color-mix(in srgb, var(--fx-accent) 70%, var(--muted));
+  color: color-mix(in srgb, var(--fx-accent) 75%, var(--muted));
   font-family: var(--font-geist-sans), system-ui, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 650;
   letter-spacing: 0.12em;
-  margin-bottom: 0.15rem;
 }
 
-.how-stage-copy h3 {
-  margin: 0;
-  max-width: 14ch;
-  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+.how-it-works-section .how-stage-copy h3 {
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  font-size: clamp(1.2rem, 2vw, 1.65rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.035em !important;
 }
 
-.how-stage-copy > p {
-  margin: 0;
-  max-width: 38ch;
+.how-it-works-section .how-stage-copy > p {
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
   color: var(--muted);
-  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
-  line-height: 1.55;
+  font-size: clamp(0.88rem, 1.2vw, 1rem) !important;
+  line-height: 1.5 !important;
 }
 
-.how-payment-options {
-  grid-template-columns: minmax(0, 1fr) !important;
-  max-width: 280px;
-  margin-inline: auto;
-}
+@media (min-width: 1100px) {
+  .how-it-works-section .how-narrative {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
 
-.how-converge-line-right {
-  display: none;
+  .how-it-works-section .how-stage-copy {
+    padding: 1.1rem 1rem !important;
+  }
+
+  .how-it-works-section .how-stage-copy h3 {
+    font-size: clamp(1.05rem, 1.3vw, 1.35rem) !important;
+  }
 }
 
 @media (max-width: 720px) {
-  .how-narrative {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .how-stage-copy h3 {
-    max-width: none;
+  .how-it-works-section .how-narrative {
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
   }
 }
 
