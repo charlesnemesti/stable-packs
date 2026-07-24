@@ -295,6 +295,11 @@
   max-width: none !important;
 }
 
+/* Prize table step needs the full row — never squeeze into one narrow column */
+.how-it-works-section .how-stage-copy:has(.luck-odds-panel) {
+  grid-column: 1 / -1 !important;
+}
+
 .how-it-works-section .how-stage-copy,
 .how-it-works-section .how-stage-copy:last-child {
   min-height: 0 !important;
@@ -346,18 +351,38 @@
   line-height: 1.5 !important;
 }
 
-@media (min-width: 1100px) {
-  .how-it-works-section .how-narrative {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 1rem !important;
-  }
+/* Prize table grid — fill available width */
+.luck-odds-panel {
+  width: 100% !important;
+  margin-top: 1rem !important;
+  box-sizing: border-box;
+}
 
-  .how-it-works-section .how-stage-copy {
-    padding: 1.1rem 1rem !important;
-  }
+.luck-odds-heading {
+  max-width: none !important;
+}
 
-  .how-it-works-section .how-stage-copy h3 {
-    font-size: clamp(1.05rem, 1.3vw, 1.35rem) !important;
+.luck-odds-heading p {
+  max-width: 42rem !important;
+}
+
+.luck-odds-grid.how-pack-options,
+.luck-odds-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0.85rem !important;
+  width: 100% !important;
+}
+
+.luck-odds-card {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+@media (min-width: 900px) {
+  .luck-odds-grid.how-pack-options,
+  .luck-odds-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
   }
 }
 
@@ -365,6 +390,11 @@
   .how-it-works-section .how-narrative {
     grid-template-columns: 1fr !important;
     gap: 0.9rem !important;
+  }
+
+  .luck-odds-grid.how-pack-options,
+  .luck-odds-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
 
@@ -509,4 +539,12 @@
   .ca-copy-btn {
     width: 100%;
   }
+}
+
+/* catalog card cleanup */
+.catalog-card .stack,
+.catalog-summary .stack,
+.catalog-art .stack,
+div.stack[aria-hidden="true"] {
+  display: none !important;
 }
