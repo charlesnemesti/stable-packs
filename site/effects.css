@@ -213,3 +213,107 @@
 .luck-marquee-prizes-only .pack-showcase-track-left-to-right {
   animation-duration: 26s !important;
 }
+
+/* How it works — balanced full-width 2×2 (no empty sticky rail) */
+.how-it-works-section .how-heading {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.how-it-works-section .how-heading > p:last-child {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.how-story {
+  display: block !important;
+}
+
+.how-visual-column {
+  display: none !important;
+}
+
+.how-mobile-scene {
+  display: none !important;
+}
+
+.how-narrative {
+  counter-reset: how-step;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 3.25rem) clamp(2.25rem, 5vw, 4rem);
+  border-top: 1px solid var(--line);
+  padding-top: clamp(2rem, 4vw, 3.25rem);
+}
+
+.how-stage-copy {
+  min-height: 0 !important;
+  border-left: none !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.85rem;
+  position: relative;
+}
+
+.how-stage-copy:last-child {
+  min-height: 0 !important;
+}
+
+.how-stage-marker {
+  position: static !important;
+  left: auto !important;
+  margin: 0;
+}
+
+.how-stage-copy::before {
+  counter-increment: how-step;
+  content: counter(how-step, decimal-leading-zero);
+  color: color-mix(in srgb, var(--fx-accent) 70%, var(--muted));
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.15rem;
+}
+
+.how-stage-copy h3 {
+  margin: 0;
+  max-width: 14ch;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.how-stage-copy > p {
+  margin: 0;
+  max-width: 38ch;
+  color: var(--muted);
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+  line-height: 1.55;
+}
+
+.how-payment-options {
+  grid-template-columns: minmax(0, 1fr) !important;
+  max-width: 280px;
+  margin-inline: auto;
+}
+
+.how-converge-line-right {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .how-narrative {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .how-stage-copy h3 {
+    max-width: none;
+  }
+}
