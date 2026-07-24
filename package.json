@@ -1,0 +1,12 @@
+{
+  "name": "stable-packs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stable Packs — USD0 cash drop packs on Stable Chain",
+  "type": "module",
+  "scripts": {
+    "mirror": "node scripts/mirror-site.mjs",
+    "dev": "npx --yes serve site -l 4180",
+    "start": "npx --yes serve site -l 4180"
+  }
+}

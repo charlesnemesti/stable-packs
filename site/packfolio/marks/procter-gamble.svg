@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="12" fill="#0B1211"/>
+  <circle cx="32" cy="32" r="18" stroke="#2EE6C5" stroke-width="2"/>
+  <text x="32" y="37" text-anchor="middle" fill="#E8FBF7" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">USD</text>
+</svg>
