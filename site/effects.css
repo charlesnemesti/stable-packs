@@ -192,3 +192,24 @@
     transform: scale(1.35);
   }
 }
+
+
+/* hero poster kill */
+.hero-media {
+  background-image: none !important;
+  background-color: #000 !important;
+}
+.hero-video {
+  background: #000;
+}
+
+/* marquee 2x speed */
+.pack-showcase-track-left-to-right {
+  animation-duration: 26s !important;
+}
+.pack-showcase-track-right-to-left {
+  animation-duration: 30s !important;
+}
+.luck-marquee-prizes-only .pack-showcase-track-left-to-right {
+  animation-duration: 26s !important;
+}
