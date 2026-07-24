@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "mirror": "node scripts/mirror-site.mjs",
-    "dev": "npx --yes serve site -l 4180",
-    "start": "npx --yes serve site -l 4180"
+    "dev": "node scripts/dev-server.mjs",
+    "start": "node scripts/dev-server.mjs"
   }
 }
