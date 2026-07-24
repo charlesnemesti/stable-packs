@@ -5,5 +5,17 @@
   "buildCommand": "echo static-site",
   "outputDirectory": "site",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/agent",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/agent/",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
 }
