@@ -7,6 +7,36 @@
   }
 
   ready(() => {
+    // CA copy boxes
+    document.addEventListener("click", async (event) => {
+      const btn = event.target.closest("[data-ca-copy]");
+      if (!btn) return;
+      const root = btn.closest("[data-ca]");
+      const value = root?.getAttribute("data-ca")?.trim();
+      if (!value) return;
+      try {
+        await navigator.clipboard.writeText(value);
+      } catch {
+        const ta = document.createElement("textarea");
+        ta.value = value;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
+      const label = btn.querySelector(".ca-copy-btn-label");
+      const prev = label?.textContent || "Copy";
+      btn.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(() => {
+        btn.classList.remove("is-copied");
+        if (label) label.textContent = prev;
+      }, 1400);
+    });
+
     // Hero entrance classes (home only)
     const copy = document.querySelector(".hero-copy");
     if (copy && !reduce) {
@@ -18,7 +48,7 @@
     // Scroll reveal targets
     const targets = [
       ...document.querySelectorAll(
-        ".catalog-section, .how-it-works-section, .pack-showcase-marquee, .portfolio-section, .how-money-route, .catalog-group"
+        ".catalog-section, .how-it-works-section, .pack-showcase-marquee, .portfolio-section, .how-money-route, .catalog-group, .ca-section"
       ),
     ];
     for (const el of targets) el.classList.add("fx-reveal");
