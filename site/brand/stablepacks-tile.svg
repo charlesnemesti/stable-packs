@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" fill="#000000"/>
+  <text x="48" y="278" fill="#FFFFFF" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="56" font-weight="500" letter-spacing="-1.5">stablepacks</text>
+  <rect x="400" y="252" width="16" height="16" fill="#2EE6C5"/>
+</svg>

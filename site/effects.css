@@ -10,7 +10,7 @@
   .fx-float,
   .hero-shell .hero-media video,
   .catalog-card,
-  .brand-logo,
+  .brand-wordmark,
   .pack-showcase-track {
     animation: none !important;
     transition: none !important;
@@ -120,14 +120,54 @@
   }
 }
 
-/* Brand mark subtle float */
-.brand-logo {
+/* Brand wordmark: stablepacks + teal square */
+.brand {
+  gap: 0 !important;
+  font-size: 0 !important;
+}
+
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
+  color: #fff;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
   transition: transform 0.35s var(--fx-ease), filter 0.35s ease;
 }
-.brand:hover .brand-logo,
-.brand:focus-visible .brand-logo {
-  transform: translateY(-2px) scale(1.04);
-  filter: drop-shadow(0 0 12px color-mix(in srgb, var(--fx-accent) 55%, transparent));
+
+.brand-wordmark i {
+  display: inline-block;
+  width: 0.34em;
+  height: 0.34em;
+  margin-bottom: 0.02em;
+  background: var(--fx-accent, #2ee6c5);
+  border-radius: 1px;
+  flex: 0 0 auto;
+}
+
+.brand:hover .brand-wordmark,
+.brand:focus-visible .brand-wordmark {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--fx-accent) 45%, transparent));
+}
+
+.brand .brand-logo,
+.brand .brand-text-sr,
+.brand .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Scroll reveals */
